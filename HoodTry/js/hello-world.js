@@ -13,6 +13,8 @@ function getLocation() {
 }
   
 function myNewFunction(){
+        $("#community_index").html("halloaaaa");
+
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
 }
   
@@ -64,11 +66,25 @@ function onGeolocationError(error) {
 }
 //=======================Get Community from hoodeye=======================//
 
-/ onGeolocationError Callback receives a PositionError object
-function listCommunties() {
-    $.get('dev.hoodeye.com:4242/api/community', function(data) {
-  $('#community_index').html(data);
-});
+function listCommunities() {
+    $("#community_index").html("hallo");
+    blah();
+}
+
+function blah() {
+    $.getJSON('http://dev.hoodeye.com:4242/api/community', function(data) {
+     //var pdata = $.parseJSON(data);   
+     var items = [];
+     //$.each(pdata, function(key, val) { 
+     //    items.push(key + ':' + val + '<br/>');
+     //});
+     //$("#community_index").html(items.join(''));
+       //$("#community_index").html('get data to show');
+
+    });
+  
+     $("#community_index").html('get data to show');
+
 }
 
 
