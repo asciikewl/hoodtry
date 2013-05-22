@@ -22,7 +22,7 @@ function sayHello() {
     var sayHelloTextElem = document.getElementById('helloWorldText');
     var inputText = document.getElementById('txtName');
     
-    sayHelloTextElem.innerHTML = 'Hello you bad ass, ' + inputText.value + '!';
+    sayHelloTextElem.innerHTML = 'Hello you bad donkey, ' + inputText.value + '!';
     sayHelloTextElem.style.display = 'block';
     sayHelloInputElem.style.display = 'none';
 }
