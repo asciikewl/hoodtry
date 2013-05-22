@@ -37,6 +37,7 @@
                 <ul data-role="listview">
                     <li><a href="#page1" data-transition="slide">UI Interaction Example</a></li>
                     <li><a href="#page2" data-transition="slide">Geolocation Example</a></li>
+                    <li><a href="#page3" data-transition="slide">Community List Example</a></li>
                 </ul>
             </div>
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
@@ -68,7 +69,7 @@
             </div>
         </div>
         
-        <!-- The following page demonstrates how to access device sensors using Apache Callback (aka PhoneGap) -->
+         <!-- The following page demonstrates how to access device sensors using Apache Callback (aka PhoneGap) -->
         <div data-role="page" id="page2" data-add-back-btn="true">
             <div data-role="header">
                 <h1>Geolocation Example 2</h1>
@@ -78,6 +79,21 @@
                 <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
                 <button data-icon="refresh" onClick="getLocation();">Refresh Location</button>
                 <div id="map_canvas"></div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="oneFooter">
+                <span class="footerText">Built with Icenium&trade;</span>
+            </div>
+        </div>
+
+        <!--REST call -->
+        <div data-role="page" id="page3" data-add-back-btn="true">
+            <div data-role="header">
+                <h1>Community List</h1>
+            </div>
+            <div data-role="content">
+                <h1>My Communities</h1>
+                <button data-icon="refresh" onClick="listCommunities();">Refresh Communities</button>
+                <div id="community_index">XXXXX</div>
             </div>
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
                 <span class="footerText">Built with Icenium&trade;</span>
