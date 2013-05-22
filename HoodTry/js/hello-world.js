@@ -62,3 +62,14 @@ function onGeolocationSuccess(position) {
 function onGeolocationError(error) {
     $("#myLocation").html("<span class='err'>" + error.message + "</span>");
 }
+//=======================Get Community from hoodeye=======================//
+
+/ onGeolocationError Callback receives a PositionError object
+function listCommunties() {
+    $.get('dev.hoodeye.com:4242/api/community', function(data) {
+  $('#community_index').html(data);
+});
+}
+
+
+
