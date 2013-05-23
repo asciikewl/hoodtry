@@ -13,7 +13,7 @@ function getLocation() {
 }
   
 function myNewFunction(){
-        $("#community_index").html("halloaaaa");
+        $("#community_index").html("hallo bad boy");
 
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
 }
@@ -24,7 +24,7 @@ function sayHello() {
     var sayHelloTextElem = document.getElementById('helloWorldText');
     var inputText = document.getElementById('txtName');
     
-    sayHelloTextElem.innerHTML = 'Hello you bad donkey, ' + inputText.value + '!';
+    sayHelloTextElem.innerHTML = 'Hello you bad ass, ' + inputText.value + '!';
     sayHelloTextElem.style.display = 'block';
     sayHelloInputElem.style.display = 'none';
 }
