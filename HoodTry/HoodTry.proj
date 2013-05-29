@@ -60,7 +60,6 @@
     <Content Include="daveindex.html" />
     <Content Include="images\images.jpg" />
     <Content Include="images\images4.jpg" />
-    <Content Include="indexold.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
     <Content Include="jquery-mobile\images\icons-18-white.png" />
