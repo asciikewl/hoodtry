@@ -72,18 +72,18 @@ function listCommunities() {
 }
 
 function blah() {
-    $.getJSON('http://dev.hoodeye.com:4242/api/community', function(data) {
-     //var pdata = $.parseJSON(data);   
-     var items = [];
-     //$.each(pdata, function(key, val) { 
-     //    items.push(key + ':' + val + '<br/>');
-     //});
-     //$("#community_index").html(items.join(''));
+    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+        
+      var items = [];
+      $.each(data, function(key, community) { 
+         items.push(community.name);
+     });
+     $("#community_index").html(items.join('<br/>'));
        //$("#community_index").html('get data to show');
 
     });
   
-     $("#community_index").html('get data to show');
+     //$("#community_index").html('get data to show');
 
 }
 
