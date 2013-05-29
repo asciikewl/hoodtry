@@ -79,6 +79,7 @@
                 <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
                 <button data-icon="refresh" onClick="getLocation();">Refresh Location</button>
                 <div id="map_canvas"></div>
+                <a href="#AddEventForm" data-role="button" data-transition="slide">Add Event</a>
             </div>
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
                 <span class="footerText">Built with Icenium&trade;</span>
@@ -98,6 +99,47 @@
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
                 <span class="footerText">Built with Icenium&trade;</span>
             </div>
+        </div>
+        
+        <!-- First try at a popup to add an Event -->
+        <div data-role="page" id="AddEventForm" data-add-back-btn="true">
+          <div data-role="header">
+            <h1>Add Event</h1>
+          </div>
+          <div data-role="content">
+          <form action="http://dev.hoodeye.com:4242/api/event" method="post">
+            <input id="event_latitude"  name="event_latitude" type="hidden" value=0>
+            <input id="event_longitude" name="event_longitude" type="hidden" value=0>
+              <ul>
+                <li>
+                    <label for="event_community">Commynity:</label>
+                    <select id="event_community" name="event_community">
+                        <!-- Options to be added with javascript -->
+                    </select>
+                </li>
+                <li>
+                    <label for="event_type">Event Type:</label>
+                    <select id="event_type" name="event_type">
+                      <option value="crime">Crime</option>
+                      <option value="concern">Concern</option>
+                      <option value="interesting">Interesting</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="event_title">Short Title</label>
+                    <input id="event_title" name="event_title"type="text">
+                </li>
+                <li>
+                    <label for="event_text">Detail</label>
+                    <textarea id="event_text" name="event_text"></textarea>
+                </li>
+                <li>
+                    <button type="submit">Submit</button>
+                    <button type="submit">Cancel</button>
+                </li>
+              </ul>    
+          </form>
+          </div>
         </div>
     </body>
     </html>

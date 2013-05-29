@@ -5,16 +5,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
+    listCommunities();
     navigator.splashscreen.hide();
 }
 
-function getLocation() {
-    myNewFunction();
-}
-  
-function myNewFunction(){
-        $("#community_index").html("hallo bad boy");
 
+function getLocation() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
 }
   
@@ -41,7 +37,15 @@ function sayHelloReset() {
 
 //=======================Geolocation Operations=======================//
 // onGeolocationSuccess Geolocation
+
+//adw: global variable for last position, until we know how to do it better
+var hoodeye_last_position;
 function onGeolocationSuccess(position) {
+    hoodeye_last_position = position;
+    
+    $("#event_latitude").val(hoodeye_last_position.coords.latitude);
+    $("#event_longitude").val(hoodeye_last_position.coords.longitude);
+    
     // Use Google API to get the location data for the current coordinates
     var geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -67,24 +71,23 @@ function onGeolocationError(error) {
 //=======================Get Community from hoodeye=======================//
 
 function listCommunities() {
-    $("#community_index").html("hallo");
-    blah();
-}
+    var mydevice =  device.uuid;
+    var lat = hoodeye_last_position.coords.latitude;
+    var long = hoodeye_last_position.coords.longitude;
+    
 
-function blah() {
-    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+    $.get('http://dev.hoodeye.com:4242/api/community?device='+mydevice+'&lat='+lat+'&long='+long, function(data) {
         
       var items = [];
+      var options;
       $.each(data, function(key, community) { 
          items.push(community.name);
+          options += '<option value="'+community._id+'">'+community.name+'</option>';
      });
      $("#community_index").html(items.join('<br/>'));
-       //$("#community_index").html('get data to show');
+     $("#event_community").html(options);
 
     });
-  
-     //$("#community_index").html('get data to show');
-
 }
 
 
