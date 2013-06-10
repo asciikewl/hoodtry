@@ -58,10 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="daveindex.html" />
+    <Content Include="icons\map.jpg" />
     <Content Include="images\building.jpg" />
     <Content Include="images\car.jpg" />
     <Content Include="images\images.jpg" />
     <Content Include="images\images4.jpg" />
+    <Content Include="icons\map.bmp" />
     <Content Include="images\people.jpg" />
     <Content Include="index.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
@@ -83,6 +85,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="views\eventsView.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
