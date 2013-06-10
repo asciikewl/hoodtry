@@ -11,6 +11,8 @@
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <iOSDeviceFamily>
+    </iOSDeviceFamily>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
@@ -84,6 +86,7 @@
       <TargetName>cordova.js</TargetName>
     </Content>
     <Content Include="views\eventsView.html" />
+    <Content Include="views\mapexample.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
