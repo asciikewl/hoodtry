@@ -63,7 +63,7 @@
     <Content Include="images\images.jpg" />
     <Content Include="images\images4.jpg" />
     <Content Include="images\people.jpg" />
-    <Content Include="indexdavekendo.html" />
+    <Content Include="index.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
     <Content Include="jquery-mobile\images\icons-18-white.png" />
