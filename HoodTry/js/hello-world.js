@@ -61,7 +61,7 @@ function onGeolocationSuccess(position) {
     
     // Use Google API to get a map of the current location
     // http://maps.googleapis.com/maps/api/staticmap?size=280x300&maptype=hybrid&zoom=16&markers=size:mid%7Ccolor:red%7C42.375022,-71.273729&sensor=true
-    var googleApis_map_Url = 'http://maps.googleapis.com/maps/api/staticmap?size=300x300&maptype=hybrid&zoom=16&sensor=true&markers=size:mid%7Ccolor:red%7C' + latlng;
+    var googleApis_map_Url = 'http://maps.googleapis.com/maps/api/staticmap?size=300x200&maptype=street&zoom=16&sensor=true&markers=size:mid%7Ccolor:red%7C' + latlng;
     var mapImg = '<img src="' + googleApis_map_Url + '" />';
     $("#map_canvas").html(mapImg);
 }
@@ -99,9 +99,17 @@ var txt1="<p>added</p>";              // Create text with HTML
 var txt2=$("<p></p>").text("Text.");  // Create text with jQuery
 var txt3=document.createElement("p");
 txt3.innerHTML="Text.";               // Create text with DOM
-$("body").append(txt1,txt2,txt3);        // Append new elements
+$("#inputlistV").append(txt1,txt2,txt3);        // Append new elements
 }
 
+function persontypes()
+{
+var txt1="<option>new person</option>";              // Create text with HTML
+var txt2=$("<option ></option>").text("Person2");  // Create text with jQuery
+var txt3=document.createElement("option");
+txt3.innerHTML="person 3";               // Create text with DOM
+$("#persontype").append(txt1,txt2,txt3);        // Append new elements
+}
 
 
 
