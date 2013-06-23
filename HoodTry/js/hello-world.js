@@ -3,17 +3,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 
-function testlist(
-
-{
-var txt1="<p>Text.</p>";              // Create text with HTML
-var txt2=$("<p></p>").text("Text.");  // Create text with jQuery
-var txt3=document.createElement("p");
-txt3.innerHTML="Text.";               // Create text with DOM
-$("body").append(txt1,txt2,txt3);        // Append new elements
-}
-$((document).refresh())
-    )
 
 // PhoneGap is ready
 function onDeviceReady() {
@@ -102,6 +91,17 @@ function listCommunities() {
 
     });
 }
+
+/////AL -testing and learning: working with the js and modifying subpage       
+function testlist()
+{
+var txt1="<p>added</p>";              // Create text with HTML
+var txt2=$("<p></p>").text("Text.");  // Create text with jQuery
+var txt3=document.createElement("p");
+txt3.innerHTML="Text.";               // Create text with DOM
+$("body").append(txt1,txt2,txt3);        // Append new elements
+}
+
 
 
 
