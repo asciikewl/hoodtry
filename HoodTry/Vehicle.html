@@ -3,9 +3,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title></title>
-          
+            <script src="jquery-mobile/jquery-1.8.2.min.js" type="text/javascript"></script>
+  
     </head>
    <body>
+       <script>
+function testlist()
+{
+var txt1="<p>added</p>";              // Create text with HTML
+var txt2=$("<p></p>").text("Text.");  // Create text with jQuery
+var txt3=document.createElement("p");
+txt3.innerHTML="Text.";               // Create text with DOM
+$("body").append(txt1,txt2,txt3);        // Append new elements
+}
+</script>
+
+    <button onclick="testlist()">testlist</button>
+       
+       <p>.....</p>
+       
        
         <li>
             
@@ -14,7 +30,7 @@
   
             </ul>
         </li>  
-       
-       
+
+
     </body>
 </html>
