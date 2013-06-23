@@ -13,7 +13,7 @@
 <body>
 
 <div data-role="header">
-	<a href="Mysettings.html" data-icon="info" class="ui-btn-right"></a>
+	<a href="index.html" onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="Mysettings.html" data-icon="info" class="ui-btn-right">Settings</a>
 	<span class="ui-title" />
 </div>
 
@@ -21,27 +21,7 @@
     <div data-role="view" data-layout="overview-layout" id="overview-cities" data-title="HoodEye"  data-theme="a">
             <ul data-role="listview" data-style="inset" data-type="group" data-dividertheme="b">
        
-        <li>
-      
-            Log Incident
-             
 
-           <ul>
-            <li id="inputlist">
-                <li><a href="People.html"> People </a></li>
-    
-
-                
-                
-                <li><a href="Vehicle.html"> Vehicles </a></li>
-    
-  
-                
-                
-                <li><a href="Building.html"> Building </a></li>   
-            </ul>
-      
- </li>
         
         <li>
             Community
@@ -59,6 +39,21 @@
     </ul>
     </div>
 
+                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
+             
+                <div id="map_canvas"></div>
+
+    
+
+<div data-role="footer"  data-position="fixed">		
+	<div data-role="navbar">
+		<ul id="inputlist">
+                <li><a href="People.html"> People </a></li>
+                <li><a href="Vehicle.html"> Vehicles </a></li>
+                <li><a href="Building.html"> Building </a></li> 
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
 
 
 </body>
