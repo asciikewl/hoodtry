@@ -75,11 +75,19 @@
     <Content Include="jquery-mobile\jquery-1.8.2.min.js" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.css" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.js" />
+    <Content Include="jquery\jquery.ui.map.extensions.js" />
+    <Content Include="jquery\jquery.ui.map.js" />
+    <Content Include="jquery\jquery.ui.map.microdata.js" />
+    <Content Include="jquery\jquery.ui.map.microformat.js" />
+    <Content Include="jquery\jquery.ui.map.overlays.js" />
+    <Content Include="jquery\jquery.ui.map.rdfa.js" />
+    <Content Include="jquery\jquery.ui.map.services.js" />
     <Content Include="js\hello-world.js" />
     <Content Include="indexgood.html" />
     <Content Include="Mapofevents.html" />
     <Content Include="Mysettings.html" />
     <Content Include="People.html" />
+    <Content Include="screen1.html" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
