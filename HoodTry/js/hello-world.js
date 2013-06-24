@@ -7,7 +7,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
-    listCommunities();
+    listCommunities1();
     navigator.splashscreen.hide();
 }
 
@@ -124,13 +124,15 @@ function listCommunities1() {
       var options;
       $.each(data, function(key, community) { 
          items.push(community.name);
-          options += '<option value="'+community._id+'">'+community.name+'</option>';
+          options += '<option>'+community.name+'</option>';
      });
-     $("#comoptions").html(items.join('<br/>'));
      
+     $("#communitylist").html(options);
 
     });
 }
+
+
 
 
 
