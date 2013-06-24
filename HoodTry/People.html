@@ -31,11 +31,43 @@
   
 </select> 
   
-      
+    
+         
+         
+         
+
+     <form action="forms-sample-response.php" method="get" class="ui-body ui-body-a ui-corner-all">
+         <input type="hidden" name="event_type" value="security_report_person"/>
+         <input type="hidden" name="device_id" value="REPLACEME"/>
+				<fieldset>
+					<div id="personDiv" data-role="fieldcontain">  
+                 <label id="personLabel" for="peron">Person type*</label>  
+                 <select id="personSelect" name="personName">  
+                     <option value="1">report type of person</option>  
+                     <option value="2">scum</option>  
+                     <option value="3">gang</option>  
+                     <option value="4">suspect</option>  
+                     ...  
+                  </select>  
+                 </div>
+
+					<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
+				</fieldset>
+		</form>
+     
+         
+         
         
 </div>
     
     </body> 
     </html>
+
+
+
+
+
+
+     
 
 
