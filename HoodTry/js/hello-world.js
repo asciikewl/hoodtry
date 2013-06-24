@@ -109,7 +109,30 @@ var txt2=$("<option ></option>").text("Person2");  // Create text with jQuery
 var txt3=document.createElement("option");
 txt3.innerHTML="person 3";               // Create text with DOM
 $("#persontype").append(txt1,txt2,txt3);        // Append new elements
+   
 }
+
+
+
+function listCommunities1() {
+
+  
+
+    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+        
+      var items = [];
+      var options;
+      $.each(data, function(key, community) { 
+         items.push(community.name);
+          options += '<option value="'+community._id+'">'+community.name+'</option>';
+     });
+     $("#comoptions").html(items.join('<br/>'));
+     
+
+    });
+}
+
+
 
 
 
