@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Building.html" />
-    <Content Include="images\spot.png" />
     <Content Include="multipageindex.html" />
     <Content Include="daveindex.html" />
     <Content Include="images\building.jpg" />
