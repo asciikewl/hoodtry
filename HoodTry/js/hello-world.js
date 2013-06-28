@@ -8,7 +8,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     getLocation();
     listCommunities1();
-    persontypes();
+    listactivity();
     navigator.splashscreen.hide();
 }
 
@@ -103,23 +103,20 @@ txt3.innerHTML="Text.";               // Create text with DOM
 $("#inputlistV").append(txt1,txt2,txt3);        // Append new elements
 }
 
-function persontypes()
+function listactivity()
 {
 var txt1="<option>bad person</option>";              // Create text with HTML
 var txt2=$("<option ></option>").text("sad person");  // Create text with jQuery
 var txt3=document.createElement("option");
 txt3.innerHTML="ugly person";               // Create text with DOM
-$("#persontype").append(txt1,txt2,txt3);        // Append new elements
+$("#activity").append(txt1,txt2,txt3);        // Append new elements
    
 }
 
 
 
 function listCommunities1() {
-
-  
-
-    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+   $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
         
       var items = [];
       var options;
@@ -132,6 +129,21 @@ function listCommunities1() {
 
     });
 }
+
+
+
+ function submitEvent() {
+                    $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
+                            {
+                            $('#result').html(response);
+                            }});
+                    return false;
+
+ }
+
+
+
+
 
 
 
