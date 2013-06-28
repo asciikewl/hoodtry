@@ -11,6 +11,20 @@
         <script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="js/hello-world.js" type="text/javascript"></script>
+        
+        <script>
+                function submitEvent() {
+                    $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
+                            {
+                            $('#result').html(response);
+                            }});
+                    return false;
+                }
+        </script>  
+    
+        
+        
+        
     </head> 
     <body> 
         
@@ -18,376 +32,82 @@
         
         <div data-role="page" id="home" >
             <div data-role="header">
+                <a onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="#mysettingspage" data-icon="info" class="ui-btn-right">Settings</a>
+	<span class="ui-title" />
                 <h1>Hoodeye</h1>
             </div>
                         <div data-role="content">
-                            <a data-role="this is where a map will be"></a>
-        
+                       
+                            
                             <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
                              <div id="map_canvas"> </div>
                             
                             
                         </div>
-                            <div data-role="Report">
-                                <h1>Report an Incident</h1>
-                                <select data-native-menu="false">
-                                    <option value="Value">Person</option>
-                                    <option value="Value">Building</option>
-                                    <option value="Value">Vehicle</option>
-                                </select>
-                            </div>
-                       
-     
-                <h1>Alerts</h1>
-       
-    
-        
-                            <div class="nav">
-                                <ul data-role="listview">
-                                    <li><a href="#page1" data-transition="slide">Crime</a></li>
-                                    <li><a href="#page2" data-transition="slide">show map</a></li>
-                                    <li><a href="#page3" data-transition="slide">communities</a></li>
-                                </ul>
-                            </div>
           
-            <div data-role="footer" data-position="fixed" data-id="homeFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
-       
-            
-            </div>
-        </div>
-        
-        
-        
-        
-        <!-- The following page demonstrates basic user interaction. -->
-        <div data-role="page" id="page1" data-add-back-btn="true"  href="#home">
-            <div data-role="header">
-                 <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-                <h1>Hello</h1>
-            </div>
-                            <div data-role="content">
-                                <h1>Say Hello!</h1>
-                                <div id='helloWorldInput'>
-                                    <label for="txtName">Enter your name:</label>
-                                    <input type="text" id="txtName" value="" />
-                                </div>
-                                <div id='helloWorldText' style="display:block;"></div>
-                                <div align="center">
-                                    <div data-role="controlgroup" style="display:inline-block;" data-type="horizontal">
-                                        <button data-icon="delete" onClick="sayHelloReset();">Reset</button>
-                                        <button data-theme="a" onClick="sayHello();">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
-            <div data-role="footer" data-position="fixed"  data-id="oneFooter">
-                <span class="footerText">page 1 footer</span>
-            </div>
-        </div>
-        
-        
-        
-        
-        
-         <!-- The following page demonstrates how to access device sensors using Apache Callback (aka PhoneGap) -->
-        <div data-role="page" id="page2" data-add-back-btn="true" href="#home" >
-            <div data-role="header">
-                        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-                <h1>Geolocation Example 2</h1>
-            </div>
-                                <div data-role="content">
-                                    <h1>My Location</h1>
-                                    <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                                    <button data-icon="refresh" onClick="getLocation();">Refresh Location</button>
-                                    <div id="map_canvas"></div>
-                                </div>
-            <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">page 2 footer;</span>
-            </div>
-        </div>
-        
-        
-        
 
-        <!--REST call -->
-        <div data-role="page" id="page3" data-add-back-btn="true" href="#home" >
-      <div data-role="header">
-                        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-                <h1>commintylist</h1>
-            </div>
-                                <div data-role="content">
-                                    <h1>My Communities</h1>
-                                    <button data-icon="refresh" onClick="listCommunities();">Refresh Communities</button>
-                                    <div id="community_index">XXXXX</div>
-                                </div>
-            <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Hoodeye - Andries, Dave, Marius and Anton&trade;</span>
-            </div>
-        </div>
-        
-    ---------------------------------------------------------------------------------------------------------    
-        ----------------------------------------------------
-    
-    new single html page ui starts here
- ----------------------------------------------------
- 
------------------------------------------------------Page 4
-    
-<div data-role="page">
- 
-    
-            <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-         
-     
- <h1>Page 4</h1>
-   </div>
-    
-    
-    
-    
-    	<a onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a>
-    
-   <div data-role="content">
-   
-       <a href="#home">home</a>
-   
-  
-    
-   </div>
+                        
+ <div data-role="footer"  data-position="fixed" id="reportpagefooter">		
+	<div data-role="navbar">
+		<ul id="inputlist">
+                <li><a href="#reportpage">  Report </a></li>
+            <li><a href=" ">   </a></li>
+            <li><a href=" ">   </a></li>
+                <li><a href="#communitypage"> communitypage </a></li> 
+		</ul>
+	</div>
 </div>
-
+           
+        </div>
+        
+        
+      
     
-----------------------------------------------------  Page 5  
+
   
 
     
-<div data-role="page" id="page5">
+<div data-role="page" id="reportpage"----------------------------------------------------------------------------------------------- reportpage>
    <div data-role="header">
      <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-       <h1>Page5</h1>
+       <h1>reportpage</h1>
    </div>
-   <div data-role="content">
-      <p>submit event to Page 5</p>
- 
-    
-<form id = "EventForm" onsubmit="return submitEvent();">
-<input name='community_id' type="hidden" value='51c89deed790743124000002'>
-<input name='intype' type="hidden" value='testing'>
-<input name='device_id' type="hidden" value='test_device'>
-<input name='lat' type="hidden" value='-26.1132'>
-<input name='long' type="hidden" value='27.9845'>
-Activity:<select name='activity'>
-<option>Loitering</option>
-<option>Trespassing</option>
-</select>
-<br/>
-Detail:<input name="detail" type=text>
-<br/>
-<input name='submit' value="submit" type='submit'>
-</form>
-
-    <div id='result'>Noi Result yet</div>
+                           <div data-role="content">
+                              <p>submit event to Page 5</p>
+                         
+                            
+                        <form id = "EventForm" onsubmit="return submitEvent();">
+                        <input name='community_id' type="hidden" value='51c89deed790743124000002'>
+                        <input name='intype' type="hidden" value='testing'>
+                        <input name='device_id' type="hidden" value='test_device'>
+                        <input name='lat' type="hidden" value='-26.1132'>
+                        <input name='long' type="hidden" value='27.9845'>
+                        Activity:<select name='activity'>
+                        <option>Loitering</option>
+                        <option>Trespassing</option>
+                        </select>
+                        <br/>
+                        Detail:<input name="detail" type=text>
+                        <br/>
+                        <input name='submit' value="submit" type='submit'>
+                        </form>
+                        
+                            <div id='result'>Noi Result yet</div>
 
 
     </div>
 </div>
 
-    
-    
-    
-    
-  ----------------------------------------------------  
-    
-    
-----------------------------------------------------  Page 6
-  
-
-    
-<div data-role="page" id="page6">
-   <div data-role="header">
-       
-        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-       
-      <h1>Page 6</h1>
-   </div>
-   <div data-role="content">
-      <p>list some communities Page 6</p>
- 
-    
-       
-       
-  
-<label for="communitylist" class="select">Typeofcommunities</label>  
-  
-<select   onclick="listCommunities1();" name="communitylist" id="communitylist" data-theme="a">
-    <option > select community </option>
-</select> 
-
-       
-       
-
-
-    </div>
-</div>
-
-    
-    
-    
-    
-  ----------------------------------------------------      
-----------------------------------------------------  Page 7
-  
-
-<div data-role="page" id="page7">
-   <div data-role="header">
-       
-        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-       
-      <h1>Page 7 </h1>
-   </div>
-   <div data-role="content">
-      <p>choose input screen Page7</p>
- 
- 
-    
-<p>Report On Things</p>
-         <ul data-role="listview" data-style="inset" data-type="group" data-dividertheme="b" id="inputlistscreen1">
-       
-
-                <li><a href="#pagepeople"> People </a></li>
-                <li><a href="#pagevehicle"> Vehicle </a></li>
-                <li><a href="#pagebuilding"> Building </a></li> 
-            
-		</ul>
-
-    </div>
-</div>
-
-    
-    
-    
-    
-  ----------------------------------------------------  
-   
----------------------------------------------------- pagepeople
   
 
     
 
-<div data-role="page" id="pagepeople">
-   <div data-role="header">
-       
-        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-       
-      <h1>pagepeople </h1>
-   </div>
-   <div data-role="content">
-      <p>Welcome to pagepeople</p>
- 
- 
-     <div data-role="fieldcontain"> <label for="persontype" class="select">TypeofPerson</label>  
-         
-                     <div><button onclick="persontypes();">add person types</button>  
-                     </div>
-  
-                            <select name="persontype" id="persontype" data-theme="d"> 
-                  
-                                    <option value="1">Shady walker</option> 
-                                      
-                                    <option value="2">Beggar</option> 
-                                      
-                                    <option value="3">Gangstas</option> 
-  
-                            </select> 
-  
- </div>
-
-     <form action="forms-sample-response.php" method="get" class="ui-body ui-body-a ui-corner-all">
-         <input type="hidden" name="event_type" value="security_report_person"/>
-         <input type="hidden" name="device_id" value="REPLACEME"/>
-				<fieldset>
-				    	<div id="personDiv" data-role="fieldcontain">  
-                         <label id="personLabel" for="peron">Person type*</label>  
-                         <select id="personSelect" name="personName">  
-                             <option value="1">report type of person</option>  
-                             <option value="2">scum</option>  
-                             <option value="3">gang</option>  
-                             <option value="4">suspect</option>  
-                             ...  
-                          </select>  
-                         </div>
-
-					<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
-				</fieldset>
-	</form>
-     
-         
-       
-       
-
-  
-    </div>
-</div>
-
-    
-    
-    
-    
-  ----------------------------------------------------     
-
-    
----------------------------------------------------- pagevehicle
-  
-
-    
-<div data-role="page" id="pagevehicle">
+<div data-role="page" id="pagebuilding"----------------------------------------------------------------------------------------------- buildingpage>
    <div data-role="header">
         
         <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-     <h1>vehicle</h1>
-   </div>
-   <div data-role="content">
-      <p>Welcome to vehicle Page</p>
- 
-    
-<p>Report On vehicle</p>
-
-        
-       <p><button onclick="listCommunities1();">list coms</button>.....</p>
-       
-       
-        <li>
-               <ul id="comoptions">
-                   <li><a href="index.html"> Vechcle GO Back </a>
-                </li>
-  
-            </ul>
-        </li>  
-      
-       
- 
-    </div>
-</div>
-
-    
-    
-    
-    
-  ----------------------------------------------------  
-
-
-
----------------------------------------------------- pagebuilding
-  
-
-    
-<div data-role="page" id="pagebuilding">
-   <div data-role="header">
-        
-        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
-       
-     <h1>building</h1>
+     <h1>pagebuilding</h1>
    </div>
    <div data-role="content">
       <p>Welcome to building Page</p>
@@ -397,33 +117,51 @@ Detail:<input name="detail" type=text>
 
 
     </div>
-    
-            
-        
- <div data-role="footer"  data-position="fixed" id="mainfooter">		
-	<div data-role="navbar">
-		<ul id="inputlist">
-                <li><a href="#page4">  Report </a></li>
-            <li><a href=" ">   </a></li>
-                <li><a href="#pagevehicle"> Vehicles </a></li>
-                <li><a href="#pagevuilding"> Building </a></li> 
-		</ul>
-	</div>
 </div>
+
+
     
+<div data-role="page" id="communitypage"----------------------------------------------------------------------------------------------- communitypage>
+   <div data-role="header">
        
-    
+        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+      <h1>hcommunitypageh</h1>
+   </div>
+   <div data-role="content">
+      <p>communitypage</p>
+ 
+   
+  
+<label for="communitylist" class="select">Typeofcommunities</label>  
+  
+<select   onclick="listCommunities1();" name="communitylist" id="communitylist" data-theme="a">
+    <option > select community </option>
+</select> 
 
+
+    </div>
 </div>
+        
+        
+ 
+<div data-role="page" id="mysettingspage"----------------------------------------------------------------------------------------------- mysettingspage>
+   <div data-role="header">
+        
+        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+     <h1>mysettingspage</h1>
+   </div>
+   <div data-role="content">
+      <p>my account info</p>
+ 
+<p>what is my user</p>    
+<p>what is my subscrition</p>
 
-    
-    
-    
-    
-  ----------------------------------------------------  
 
-
-
+    </div>
+</div>
+   
 
         
         

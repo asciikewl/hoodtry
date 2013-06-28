@@ -8,6 +8,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     getLocation();
     listCommunities1();
+    persontypes();
     navigator.splashscreen.hide();
 }
 
@@ -104,10 +105,10 @@ $("#inputlistV").append(txt1,txt2,txt3);        // Append new elements
 
 function persontypes()
 {
-var txt1="<option>new person</option>";              // Create text with HTML
-var txt2=$("<option ></option>").text("Person2");  // Create text with jQuery
+var txt1="<option>bad person</option>";              // Create text with HTML
+var txt2=$("<option ></option>").text("sad person");  // Create text with jQuery
 var txt3=document.createElement("option");
-txt3.innerHTML="person 3";               // Create text with DOM
+txt3.innerHTML="ugly person";               // Create text with DOM
 $("#persontype").append(txt1,txt2,txt3);        // Append new elements
    
 }
