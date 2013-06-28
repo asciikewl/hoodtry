@@ -26,30 +26,69 @@ function submitEvent() {
     
 <body>
 
-<div data-role="header">
-	<a href="index.html" onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="Mysettings.html" data-icon="info" class="ui-btn-right">Settings</a>
-	<span class="ui-title" />
+    
+ ----------------------------------------------------
+    
+    new single html page ui starts here
+ ----------------------------------------------------
+    
+-----------------------------------------------------Page 1
+    
+<div data-role="page">
+   <div data-role="header" id="page1" >
+     	<a href="index.html" onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="Mysettings.html" data-icon="info" class="ui-btn-right">Settings</a>
+	<span class="ui-title" /> <h1>Page 1</h1>
+   </div>
+    
+    
+    
+    
+    
+    
+   <div data-role="content">
+      <a href="#page2">Go to Page 2</a>
+   
+  
+    
+ 
+
+<div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
+ <div id="map_canvas"> </div>
+
+    
+    
+    
+    
+ <div data-role="footer"  data-position="fixed" id="mainfooter">		
+	<div data-role="navbar">
+		<ul id="inputlist">
+                <li><a href="screen1.html"> Report </a></li>
+            <li><a href=" ">   </a></li>
+                <li><a href="Vehicle.html"> Vehicles </a></li>
+                <li><a href="Building.html"> Building </a></li> 
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
+  
+    </div>
 </div>
 
     
-   
-  
-<label for="communitylist" class="select">Typeofcommunities</label>  
-  
-<select   onclick="listCommunities1();" name="communitylist" id="communitylist" data-theme="a">
-    <option > select community </option>
-</select> 
-
-
-<div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-        
     
-                <div id="map_canvas"> </div>
+----------------------------------------------------  Page 2  
+  
 
-
-
-
-
+    
+<div data-role="page" id="page2">
+   <div data-role="header">
+     <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       <h1>Page 2</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to Page 2</p>
+ 
+    
 <form id = "EventForm" onsubmit="return submitEvent();">
 <input name='community_id' type="hidden" value='51c89deed790743124000002'>
 <input name='intype' type="hidden" value='testing'>
@@ -68,21 +107,268 @@ Detail:<input name="detail" type=text>
 
     <div id='result'>Noi Result yet</div>
 
+    
+    
+    
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
+    
+    
+----------------------------------------------------  Page 3
+  
+
+    
+<div data-role="page" id="page3">
+   <div data-role="header">
+       
+        <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+      <h1>Page 3</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to Page 3</p>
+ 
+    
+       
+       
+  
+<label for="communitylist" class="select">Typeofcommunities</label>  
+  
+<select   onclick="listCommunities1();" name="communitylist" id="communitylist" data-theme="a">
+    <option > select community </option>
+</select> 
+
+       
+       
+       
+       
+       
+    
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
+    
+----------------------------------------------------  Page 4
+  
+
+    
+<div data-role="page" id="page4">
+   <div data-role="header">
+       
+        <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+      <h1>Page 4</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to Page 4</p>
+ 
+    
+<p>Report On Things</p>
+         <ul data-role="listview" data-style="inset" data-type="group" data-dividertheme="b" id="inputlistscreen1">
+       
+
+                <li><a href="#pagepeople"> People </a></li>
+                <li><a href="#pagevehicle"> Vehicle </a></li>
+                <li><a href="#pagebuilding"> Building </a></li> 
+            
+		</ul>
+    
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
+    
+   
+
+
+    
+---------------------------------------------------- pagepeople
+  
+
+    
+<div data-role="page" id="pagepeople">
+   <div data-role="header">
+       
+        <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+      <h1>People</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to People Page</p>
+ 
+    
+<p>Report On People</p>
+
+    
+       
+       
+       
+       
+       
+       
+       
+     <div data-role="fieldcontain"> 
+  
+<label for="persontype" class="select">TypeofPerson</label>  
+         
+     <div>    <button onclick="persontypes();">add person types</button>   </div>
+  
+            <select name="persontype" id="persontype" data-theme="d"> 
+                  
+                <option value="1">Shady walker</option> 
+                  
+                <option value="2">Beggar</option> 
+                  
+                <option value="3">Gangstas</option> 
+  
+            </select> 
+  
+    
+         
+         
+         
+
+     <form action="forms-sample-response.php" method="get" class="ui-body ui-body-a ui-corner-all">
+         <input type="hidden" name="event_type" value="security_report_person"/>
+         <input type="hidden" name="device_id" value="REPLACEME"/>
+				<fieldset>
+					<div id="personDiv" data-role="fieldcontain">  
+                 <label id="personLabel" for="peron">Person type*</label>  
+                 <select id="personSelect" name="personName">  
+                     <option value="1">report type of person</option>  
+                     <option value="2">scum</option>  
+                     <option value="3">gang</option>  
+                     <option value="4">suspect</option>  
+                     ...  
+                  </select>  
+                 </div>
+
+					<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
+				</fieldset>
+		</form>
+     
+         
+       
+       
+       
+       
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
+---------------------------------------------------- pagevehicle
+  
+
+    
+<div data-role="page" id="pagevehicle">
+   <div data-role="header">
+        
+        <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+     <h1>vehicle</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to vehicle Page</p>
+ 
+    
+<p>Report On vehicle</p>
+
+        
+       <p><button onclick="listCommunities1();">list coms</button>.....</p>
+       
+       
+        <li>
+               <ul id="comoptions">
+                   <li><a href="index.html"> Vechcle GO Back </a>
+                </li>
+  
+            </ul>
+        </li>  
+      
+       
+    
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
+
+
+
+---------------------------------------------------- pagebuilding
+  
+
+    
+<div data-role="page" id="pagebuilding">
+   <div data-role="header">
+        
+        <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
+       
+     <h1>building</h1>
+   </div>
+   <div data-role="content">
+      <p>Welcome to building Page</p>
+ 
+    
+<p>Report On building</p>
+
+        
+
+       
+    
+  <div data-role="footer">
+   </div>
+  
+    </div>
+</div>
+
+    
+    
+    
+    
+  ----------------------------------------------------  
 
 
 
     
 
-<div data-role="footer"  data-position="fixed" id="mainfooter">		
-	<div data-role="navbar">
-		<ul id="inputlist">
-                <li><a href="screen1.html"> Report </a></li>
-            <li><a href=" ">   </a></li>
-                <li><a href="Vehicle.html"> Vehicles </a></li>
-                <li><a href="Building.html"> Building </a></li> 
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /footer -->
 
 
 </body>
