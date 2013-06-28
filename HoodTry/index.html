@@ -31,12 +31,12 @@ function submitEvent() {
     
     new single html page ui starts here
  ----------------------------------------------------
-    
+ 
 -----------------------------------------------------Page 1
     
 <div data-role="page">
    <div data-role="header" id="page1" >
-     	<a href="index.html" onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="Mysettings.html" data-icon="info" class="ui-btn-right">Settings</a>
+     	<a onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="Mysettings.html" data-icon="info" class="ui-btn-right">Settings</a>
 	<span class="ui-title" /> <h1>Page 1</h1>
    </div>
     
@@ -58,23 +58,10 @@ function submitEvent() {
     
     
     
-    
- <div data-role="footer"  data-position="fixed" id="mainfooter">		
-	<div data-role="navbar">
-		<ul id="inputlist">
-                <li><a href="screen1.html"> Report </a></li>
-            <li><a href=" ">   </a></li>
-                <li><a href="Vehicle.html"> Vehicles </a></li>
-                <li><a href="Building.html"> Building </a></li> 
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /footer -->
 
-  
     </div>
 </div>
 
-    
     
 ----------------------------------------------------  Page 2  
   
@@ -107,12 +94,7 @@ Detail:<input name="detail" type=text>
 
     <div id='result'>Noi Result yet</div>
 
-    
-    
-    
-  <div data-role="footer">
-   </div>
-  
+
     </div>
 </div>
 
@@ -149,13 +131,8 @@ Detail:<input name="detail" type=text>
 
        
        
-       
-       
-       
-    
-  <div data-role="footer">
-   </div>
-  
+
+
     </div>
 </div>
 
@@ -163,21 +140,20 @@ Detail:<input name="detail" type=text>
     
     
     
-  ----------------------------------------------------  
-    
+  ----------------------------------------------------      
 ----------------------------------------------------  Page 4
   
 
-    
 <div data-role="page" id="page4">
    <div data-role="header">
        
         <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1>Page 4</h1>
+      <h1>Page 4 </h1>
    </div>
    <div data-role="content">
       <p>Welcome to Page 4</p>
+ 
  
     
 <p>Report On Things</p>
@@ -189,10 +165,7 @@ Detail:<input name="detail" type=text>
                 <li><a href="#pagebuilding"> Building </a></li> 
             
 		</ul>
-    
-  <div data-role="footer">
-   </div>
-  
+
     </div>
 </div>
 
@@ -201,83 +174,63 @@ Detail:<input name="detail" type=text>
     
     
   ----------------------------------------------------  
-    
    
-
-
-    
 ---------------------------------------------------- pagepeople
   
 
     
+
 <div data-role="page" id="pagepeople">
    <div data-role="header">
        
         <a href="#page1" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1>People</h1>
+      <h1>pagepeople </h1>
    </div>
    <div data-role="content">
-      <p>Welcome to People Page</p>
+      <p>Welcome to pagepeople</p>
  
-    
-<p>Report On People</p>
-
-    
-       
-       
-       
-       
-       
-       
-       
-     <div data-role="fieldcontain"> 
-  
-<label for="persontype" class="select">TypeofPerson</label>  
+ 
+     <div data-role="fieldcontain"> <label for="persontype" class="select">TypeofPerson</label>  
          
-     <div>    <button onclick="persontypes();">add person types</button>   </div>
+                     <div><button onclick="persontypes();">add person types</button>  
+                     </div>
   
-            <select name="persontype" id="persontype" data-theme="d"> 
+                            <select name="persontype" id="persontype" data-theme="d"> 
                   
-                <option value="1">Shady walker</option> 
-                  
-                <option value="2">Beggar</option> 
-                  
-                <option value="3">Gangstas</option> 
+                                    <option value="1">Shady walker</option> 
+                                      
+                                    <option value="2">Beggar</option> 
+                                      
+                                    <option value="3">Gangstas</option> 
   
-            </select> 
+                            </select> 
   
-    
-         
-         
-         
+ </div>
 
      <form action="forms-sample-response.php" method="get" class="ui-body ui-body-a ui-corner-all">
          <input type="hidden" name="event_type" value="security_report_person"/>
          <input type="hidden" name="device_id" value="REPLACEME"/>
 				<fieldset>
-					<div id="personDiv" data-role="fieldcontain">  
-                 <label id="personLabel" for="peron">Person type*</label>  
-                 <select id="personSelect" name="personName">  
-                     <option value="1">report type of person</option>  
-                     <option value="2">scum</option>  
-                     <option value="3">gang</option>  
-                     <option value="4">suspect</option>  
-                     ...  
-                  </select>  
-                 </div>
+				    	<div id="personDiv" data-role="fieldcontain">  
+                         <label id="personLabel" for="peron">Person type*</label>  
+                         <select id="personSelect" name="personName">  
+                             <option value="1">report type of person</option>  
+                             <option value="2">scum</option>  
+                             <option value="3">gang</option>  
+                             <option value="4">suspect</option>  
+                             ...  
+                          </select>  
+                         </div>
 
 					<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
 				</fieldset>
-		</form>
+	</form>
      
          
        
        
-       
-       
-  <div data-role="footer">
-   </div>
+
   
     </div>
 </div>
@@ -286,7 +239,9 @@ Detail:<input name="detail" type=text>
     
     
     
-  ----------------------------------------------------  
+  ----------------------------------------------------     
+
+    
 ---------------------------------------------------- pagevehicle
   
 
@@ -317,10 +272,7 @@ Detail:<input name="detail" type=text>
         </li>  
       
        
-    
-  <div data-role="footer">
-   </div>
-  
+ 
     </div>
 </div>
 
@@ -353,9 +305,7 @@ Detail:<input name="detail" type=text>
 
        
     
-  <div data-role="footer">
-   </div>
-  
+
     </div>
 </div>
 
@@ -367,9 +317,32 @@ Detail:<input name="detail" type=text>
 
 
 
+        
+ <div data-role="footer"  data-position="fixed" id="mainfooter">		
+	<div data-role="navbar">
+		<ul id="inputlist">
+                <li><a href="#page4">  Report </a></li>
+            <li><a href=" ">   </a></li>
+                <li><a href="#pagevehicle"> Vehicles </a></li>
+                <li><a href="#pagevuilding"> Building </a></li> 
+		</ul>
+	</div>
+</div>
+    
+    
+    
+</body>
+</html>
+
+
+   
+
     
 
 
+   
 
-</body>
-</html>
+
+  
+
+  
