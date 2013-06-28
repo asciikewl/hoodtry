@@ -34,14 +34,20 @@
 
                         
  <div data-role="footer"  data-position="fixed" id="reportpagefooter">		
-	<div data-role="navbar">
-		<ul id="inputlist">
-                <li><a href="#reportpage">  Report </a></li>
-            <li><a href=" ">   </a></li>
-            <li><a href=" ">   </a></li>
-                <li><a href="#communitypage"> communitypage </a></li> 
-		</ul>
-	</div>
+      <div data-role="navbar" data-iconpos="top">
+        <ul>
+            <li><a href="#reportpage" class="ui-btn-active" data-icon="star">Report</a></li>
+            <li><a href=" ">  </a></li>
+           
+            
+            <li><a href="#communitypage" data-icon="grid">Community</a></li>
+        </ul>
+    </div><!-- /navbar -->
+     
+
+   
+     
+     
 </div>
            
         </div>
@@ -53,9 +59,9 @@
   
 
     
-<div data-role="page" id="reportpage"----------------------------------------------------------------------------------------------- reportpage>
+<div data-role="page" data-transition="slideup" id="reportpage"----------------------------------------------------------------------------------------------- reportpage>
    <div data-role="header">
-     <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
+     <a href="#home"  data-icon="back" class="ui-btn-Left">home</a>
        <h1>reportpage</h1>
    </div>
                            <div data-role="content">
@@ -119,13 +125,28 @@
  
    
   
-<label for="communitylist" class="select">Typeofcommunities</label>  
+<label for="communitylist" class="select">Communities</label>  
   
 <select   onclick="listCommunities1();" name="communitylist" id="communitylist" data-theme="a">
     <option > select community </option>
 </select> 
 
-
+                <ul data-role="listview" >    
+                    <li><a href="#home">        
+                        <img src="images/people.jpg" title="people"/>        
+                        <h3>Sample people</h3>        
+                        <p>people sdadgsdfgsdfggfsdfg</p>    </a>
+                    </li>    
+                    <li><a href="#home">        
+                        <img src="images/car.jpg" title="cars"/>        
+                        <h3>cars image</h3>        
+                        <p>cars asdfasdgadfg</p>    </a>
+                    </li>
+                </ul>
+                 
+    
+    
+    
     </div>
 </div>
         
