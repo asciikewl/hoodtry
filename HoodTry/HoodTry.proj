@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Building.html" />
+    <Content Include="images\spot.png" />
     <Content Include="multipageindex.html" />
     <Content Include="daveindex.html" />
     <Content Include="images\building.jpg" />
@@ -67,7 +68,7 @@
     <Content Include="images\images.jpg" />
     <Content Include="images\images4.jpg" />
     <Content Include="images\people.jpg" />
-    <Content Include="index.html" />
+    <Content Include="index12.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
     <Content Include="jquery-mobile\images\icons-18-white.png" />
@@ -84,7 +85,7 @@
     <Content Include="jquery\jquery.ui.map.rdfa.js" />
     <Content Include="jquery\jquery.ui.map.services.js" />
     <Content Include="js\hello-world.js" />
-    <Content Include="indexgood.html" />
+    <Content Include="index.html" />
     <Content Include="Mapofevents.html" />
     <Content Include="Mysettings.html" />
     <Content Include="People.html" />
