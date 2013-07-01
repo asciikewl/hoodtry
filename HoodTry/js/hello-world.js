@@ -13,6 +13,11 @@ function onDeviceReady() {
     listintype1();
     listevents();
     navigator.splashscreen.hide();
+    
+    $('#eventlistpage').live('pageshow',function(event, ui){
+        listevents();
+    });
+    
 }
 
 
@@ -183,7 +188,7 @@ function listcommunity2() {
           
      });
      
-     $("#communitylist1").html(options);
+     $("#communitylist2").html(options);
 
     });
 }
