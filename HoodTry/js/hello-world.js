@@ -9,6 +9,7 @@ function onDeviceReady() {
     getLocation();
     listCommunities1();
     listactivity();
+    listintype1();
     navigator.splashscreen.hide();
 }
 
@@ -129,6 +130,53 @@ function listCommunities1() {
 
     });
 }
+
+
+
+function listintype() {
+   $.get('http://dev.hoodeye.com:4242/api/intype', function(data) {
+        
+      var items = [];
+      var options;
+      $.each(data, function(key, intype) { 
+         items.push(intype.label);
+          options += '<option>'+intype.label+'</option>';
+     });
+     
+     $("#intypelist").html(options);
+
+    });
+}
+
+
+
+
+
+function listintype1() {
+   $.get('http://dev.hoodeye.com:4242/api/intype', function(data) {
+        
+      var items = [];
+      var options;
+      $.each(data, function(key, intype) { 
+         items.push(intype.label);
+          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> ...detail later....</p></a></li>';
+          
+     });
+     
+     $("#intypelist").html(options);
+
+    });
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
