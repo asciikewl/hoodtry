@@ -34,6 +34,7 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="views" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -59,16 +60,18 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Building.html" />
+    <Content Include="images\redbullhorn.jpg" />
+    <Content Include="images\tic.jpg" />
+    <Content Include="notused\Building.html" />
     <Content Include="js\cam.js" />
-    <Content Include="multipageindex.html" />
-    <Content Include="daveindex.html" />
+    <Content Include="notused\multipageindex.html" />
+    <Content Include="notused\daveindex.html" />
     <Content Include="images\building.jpg" />
     <Content Include="images\car.jpg" />
     <Content Include="images\images.jpg" />
     <Content Include="images\images4.jpg" />
     <Content Include="images\people.jpg" />
-    <Content Include="index12.html" />
+    <Content Include="notused\index12.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
     <Content Include="jquery-mobile\images\icons-18-white.png" />
@@ -86,10 +89,10 @@
     <Content Include="jquery\jquery.ui.map.services.js" />
     <Content Include="js\hello-world.js" />
     <Content Include="index.html" />
-    <Content Include="Mapofevents.html" />
-    <Content Include="Mysettings.html" />
-    <Content Include="People.html" />
-    <Content Include="screen1.html" />
+    <Content Include="notused\Mapofevents.html" />
+    <Content Include="notused\Mysettings.html" />
+    <Content Include="notused\People.html" />
+    <Content Include="notused\screen1.html" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
@@ -99,10 +102,10 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
-    <Content Include="Vehicle.html" />
-    <Content Include="views\eventsView.html" />
-    <Content Include="views\previndex.html" />
-    <Content Include="views\mapexample.html" />
+    <Content Include="notused\Vehicle.html" />
+    <Content Include="notused\eventsView.html" />
+    <Content Include="notused\previndex.html" />
+    <Content Include="notused\mapexample.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

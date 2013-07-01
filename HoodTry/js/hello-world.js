@@ -7,9 +7,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
-    listCommunities1();
+    listCommunities1()
+    listcommunity2();//--- thing for default com
     listactivity();
     listintype1();
+    listevents();
     navigator.splashscreen.hide();
 }
 
@@ -123,11 +125,11 @@ function listCommunities1() {
       var items = [];
       var options;
       $.each(data, function(key, community) { 
-         items.push(community.name);
+        
           options += '<option>'+community.name+'</option>';
      });
      
-     $("#communitylist").html(options);
+     $("#communitylist1").html(options);
 
     });
 }
@@ -152,16 +154,14 @@ function listintype() {
 
 
 
-
 function listintype1() {
-   $.get('http://dev.hoodeye.com:4242/api/intype', function(data) {
+   $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
         
       var items = [];
       var options;
-      $.each(data, function(key, intype) { 
-         items.push(intype.label);
-          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> '+intype.submit_path+'</p></a></li>';
-          
+      $.each(data, function(key, community) { 
+       
+          options += '<li><a href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+</h3><p> '+'--community stuff---'+'</p></a></li>'</li>';
      });
      
      $("#intypelist").html(options);
@@ -170,6 +170,41 @@ function listintype1() {
 }
 
 
+
+
+function listcommunity2() {
+   $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+        
+      var items = [];
+      var options;
+      $.each(data[0].intypes, function(key, intype) { 
+ 
+          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
+          
+     });
+     
+     $("#communitylist1").html(options);
+
+    });
+}
+
+
+
+function listevents() {
+   $.get('http://dev.hoodeye.com:4242/api/event', function(data) {
+        
+      var items = [];
+      var options;
+      $.each(data, function(key, event) { 
+ 
+          options += '<li><a href="#home"> <img src="images/tic.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          
+     });
+     
+     $("#eventlist").html(options);
+
+    });
+}
 
 
 
