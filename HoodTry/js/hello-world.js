@@ -161,7 +161,7 @@ function listintype1() {
       var options;
       $.each(data, function(key, community) { 
        
-          options += '<li><a href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+</h3><p> '+'--community stuff---'+'</p></a></li>'</li>';
+          options += '<li><a href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'-- community stuff---'+'</p></a></li>';
      });
      
      $("#intypelist").html(options);
