@@ -60,6 +60,7 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\HomeGroup.jpg" />
     <Content Include="images\redbullhorn.jpg" />
     <Content Include="images\smallgroup.bmp" />
     <Content Include="images\tic.jpg" />
