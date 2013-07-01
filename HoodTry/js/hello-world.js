@@ -20,6 +20,9 @@ function onDeviceReady() {
 $('#eventlistpage').live('pageshow',function(event, ui){
        listevents();
            });
+$('#inputlistpage').live('pageshow',function(event, ui){
+       listevents();
+           });
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
@@ -202,7 +205,7 @@ function listevents() {
       var options;
       $.each(data, function(key, event) { 
  
-          options += '<li><a href="#home"> <img src="images/smallgroup.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          options += '<li><a href="#home"> <img src="images/HomeGroup.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
           
      });
      
