@@ -57,6 +57,7 @@ function onGeolocationSuccess(position) {
         if (status == google.maps.GeocoderStatus.OK) {
             if ((results.length > 1) && results[1]) {
                 $("#myLocation").html(results[1].formatted_address);
+                $("#myLocation1").html(results[1].formatted_address);
             }
         }
     });
@@ -159,7 +160,7 @@ function listintype1() {
       var options;
       $.each(data, function(key, intype) { 
          items.push(intype.label);
-          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> ...detail later....</p></a></li>';
+          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> '+intype.submit_path+'</p></a></li>';
           
      });
      

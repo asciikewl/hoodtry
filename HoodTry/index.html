@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+-<!DOCTYPE html> 
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -37,7 +37,7 @@
  <div data-role="footer"  data-position="fixed" id="reportpagefooter">		
       <div data-role="navbar" data-iconpos="top">
         <ul>
-            <li><a href="#communitypage" class="ui-btn-active" data-icon="star">Choose Thing</a></li>
+            <li><a href="#inputlistpage" class="ui-btn-active" data-icon="star">Choose Thing</a></li>
             <li><a href=" ">  </a></li>
            
             
@@ -71,15 +71,15 @@
                           <button onclick="takepic();">camra</button>
                                <img style="margin-top: 1px" id="myImage" />
 
-                               
-                               
-                               
                         <form id = "EventForm" onsubmit="return submitEvent();">
-                        <input name='community_id' type="hidden" value='51c89deed790743124000002'>
+                    
+                         <input name='community_id' type="hidden" value='51c89deed790743124000002'>
                         <input name='intype' type="hidden" value='testing'>
                         <input name='device_id' type="hidden" value='test_device'>
-                        <input name='lat' type="hidden" value='-26.1132'>
-                        <input name='long' type="hidden" value='27.9845'>
+                      
+                             <input id="myLocation1" name='adress'  val='-'>
+                            <input id="event_latitude" name='lat'  val='-'>
+                       <input id="event_longitude" name='long'  val='-'>
                         Activity:<select name='activity' id="activity">
                         <option>...</option>
 
@@ -119,35 +119,23 @@
 
 
     
-<div data-role="page" id="communitypage"----------------------------------------------------------------------------------------------- communitypage>
+<div data-role="page" id="inputlistpage"----------------------------------------------------------------------------------------------- inputpage>
    <div data-role="header">
        
         <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1>hcommunitypageh</h1>
+      <h1> what to report </h1>
    </div>
    <div data-role="content">
-      <p>communitypage</p>
+      <p>report it </p>
  
    
   
 <label for="intypelist" class="select">intypes</label>  
   
-<select   onclick="listintype1();" name="communitylist" id="intypelist" data-theme="a">
-    <option > select intype </option>
-</select> 
 
                 <ul data-role="listview"   id="intypelist" >    
-                    <li><a href="#home">        
-                        <img src="images/people.jpg" title="people"/>        
-                        <h3>Sample people</h3>        
-                        <p>people sdadgsdfgsdfggfsdfg</p>    </a>
-                    </li>    
-                    <li><a href="#home">        
-                        <img src="images/car.jpg" title="cars"/>        
-                        <h3>cars image</h3>        
-                        <p>cars asdfasdgadfg</p>    </a>
-                    </li>
+     
                 </ul>
                  
     
@@ -155,6 +143,12 @@
     
     </div>
 </div>
+        
+        
+        
+        
+        
+        
         
         
  
