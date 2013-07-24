@@ -7,7 +7,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
-    listCommunities1()
+   // listCommunities1()
     listcommunity2();//--- thing for default com
     listactivity();
     listintype1();
@@ -182,7 +182,7 @@ function listcommunity2() {
         
       var items = [];
       var options;
-      $.each(data[0].intypes, function(key, intype) { 
+      $.each(data[3].intypes, function(key, intype) { 
  
           options += '<li><a href="#reportpage"> <img src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
           
@@ -202,7 +202,7 @@ function listevents() {
       var options;
       $.each(data, function(key, event) { 
  
-          options += '<li><a href="#home"> <img src="images/yellowface.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          options += '<li><a href="#home"> <img src="" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
           
      });
      
