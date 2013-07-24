@@ -20,9 +20,6 @@ function onDeviceReady() {
 $('#eventlistpage').live('pageshow',function(event, ui){
        listevents();
            });
-$('#inputlistpage').live('pageshow',function(event, ui){
-       listevents();
-           });
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
@@ -187,7 +184,7 @@ function listcommunity2() {
       var options;
       $.each(data[0].intypes, function(key, intype) { 
  
-          options += '<li><a href="#reportpage"> <img src="images/people.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
+          options += '<li><a href="#reportpage"> <img src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
           
      });
      
@@ -205,7 +202,7 @@ function listevents() {
       var options;
       $.each(data, function(key, event) { 
  
-          options += '<li><a href="#home"> <img src="images/HomeGroup.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          options += '<li><a href="#home"> <img src="images/yellowface.jpg" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
           
      });
      

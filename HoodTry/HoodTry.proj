@@ -62,8 +62,10 @@
   <ItemGroup>
     <Content Include="images\HomeGroup.jpg" />
     <Content Include="images\redbullhorn.jpg" />
+    <Content Include="images\redface.jpg" />
     <Content Include="images\smallgroup.bmp" />
     <Content Include="images\tic.jpg" />
+    <Content Include="images\yellowface.jpg" />
     <Content Include="notused\Building.html" />
     <Content Include="js\cam.js" />
     <Content Include="notused\multipageindex.html" />
