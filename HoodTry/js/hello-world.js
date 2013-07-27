@@ -9,7 +9,7 @@ function onDeviceReady() {
     getLocation();
    // listCommunities1()
     listcommunity2();//--- thing for default com
-    listactivity();
+    //listactivity();  //--- depricated
     listintype1();
     listevents();
     navigator.splashscreen.hide();

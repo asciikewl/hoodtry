@@ -15,84 +15,117 @@
   </head> 
     <body> 
         
-        
-        
-        <div data-role="page" id="home" >
+        <div data-role="page" id="home" --------------------------------------- homepage >
             <div data-role="header">
-                <a onclick="getLocation(); return false" data-icon="search" class="ui-btn-left">Locate</a><a href="#mysettingspage" data-icon="info" class="ui-btn-right">Settings</a>
+               <a href="#mysettingspage" data-icon="info" class="ui-btn-right">Settings</a>
 	<span class="ui-title" />
-                <h4>Hoodeye</h4>
+                <h2>Hoodeye</h2>
             </div>
                         <div data-role="content">
                        
-                            
-                            	<div data-role="navbar">
-		<ul>
-			<li><a href="#">One</a></li>
-			<li><a href="#">Two</a></li>
-			<li><a href="#">Three</a></li>
-		</ul>
-	</div><!-- /navbar -->
+<div class="ui-grid-a" id="menupage">
+            <div class="ui-block-a">
+                <a id="img1" href="#communitylistpage">
+                    <div style="text-align: center;">
+                        <img id="img1" style="width: 100px; height: 100px;" src="images/imglogin.png">
+                    </div>
+                </a>
+ login
+            </div>
+            <div class="ui-block-b">
+                <a id="img2" href="#inputlistpage">
+                    <div style="text-align: center;">
+                        <img  id="img2" style="width: 100px; height: 100px;" src="images/imgreportincident.jpg">
+                    </div>
+                </a>
+ report incident
+            </div>
+            <div class="ui-block-a">
+                <a id="img3" href="">
+                    <div style="text-align: center;">
+                        <img id="img3" style="width: 100px; height: 100px;" src="images/imgpanic.png">
+                    </div>
+                </a>
+panic
+            </div>
+            <div class="ui-block-b">
+                <a id="img4" href="">
+                    <div style="text-align: center;">
+                        <img id="img4" style="width: 100px; height: 100px;" src="images/imgsafetybox.png">
+                    </div>
+                </a>
+safety box
+            </div>
+            <div class="ui-block-a">
+                 <a id="img5" href="#pagemap">
+                    <div style="text-align: center;">
+                        <img id="img5" style="width: 100px; height: 100px;" src="images/imgmap.png">
+                    </div>
+                </a>
+map
 
-                            
-                            <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                             <div id="map_canvas"> </div>
-                            
-                            
-                        </div>
-          
+            </div>
+            <div class="ui-block-b">
+                     <a id="img6" href="#eventlistpage">
+                    <div style="text-align: center;">
+                        <img id="img6" style="width: 100px; height: 100px;" src="images/imgviewalerts.png">
+                    </div>
+                </a>
+view alerts           
+             </div>
+            </div>
 
-                        
- <div data-role="footer"  data-position="fixed" id="reportpagefooter">		
-      <div data-role="navbar" data-iconpos="top">
-        <ul>
-            <li><a href="#communitylistpage" class="ui-btn-active" data-icon="star">Choose Thing</a></li>
-            <li><a href="#eventlistpage"> events </a></li>
-
-            <li><a href="#inputlistpage" data-icon="grid">community</a></li>
-        </ul>
-    </div><!-- /navbar -->
+                   
      
+    </div>     
+ </div>       
 
-   
-     
-     
-</div>
-           
-        </div>
-        
-        
-      
-    
-
-  
-
-    
 <div data-role="page" data-transition="slideup" id="reportpage"---------------------------------------------- reportpage>
    <div data-role="header">
      <a href="#home"  data-icon="back" class="ui-btn-Left">home</a>
        <h1>reportpage</h1>
    </div>
                            <div data-role="content">
-                              <p>submit event to Page 5</p>
-                         
-                          <button onclick="takepic();">cam</button>
-                               <img style="margin-top: 1px" id="myImage" />
+                          
+    
 
                         <form id = "EventForm" onsubmit="return submitEvent();">
-                    
+                                                  <div data-role="fieldcontain">
+                                    <label for="comment">Comment  </label>
+                                    <textarea name="detail" id="detail" type="text" placeholder=""> </textarea>
+                                   </div>
+                         
+                            
+                                    <div class="ui-grid-b" id="media">
+                                        <div class="ui-block-a">
+                                            <a id="cam" href="" data-role="button" data-theme="e" data-transition="flip">
+                                                cam
+                                            </a>
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <a id="audio" href="">
+                                                <div style="text-align: center;">
+                                                    <img id="audio" style="width: 50px; height: 50px;" src="images/imgaudio.png">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ui-block-c">
+                                            <a href="" data-role="button" data-transition="pop">
+                                                video
+                                            </a>
+                                        </div>
+                                    </div>
+                            
+                            
+                            
+                               
                          <input name='community_id' type="hidden" value='51c89deed790743124000002'>
                         <input name='intype' type="hidden" value='testing'>
                         <input name='device_id' type="hidden" value='test_device'>
-                            <input id="event_latitude" name='lat'  val='-'>
-                       <input id="event_longitude" name='long'  val='-'>
-                        Activity:<select name='activity' id="activity">
-                        <option>...</option>
-
-                        </select>
-                        <br/>
-                        Detail:<input name="detail" type=text>
-                        <br/>
+                            <input id="event_latitude" type="hidden" name='lat'  val='-'>
+                             <input id="event_longitude" type="hidden" name='long'  val='-'>
+                        
+  
                         <input name='submit' value="submit" type='submit'>
                         </form>
                         
@@ -102,27 +135,24 @@
     </div>
 </div>
 
-  
+          
 
-    
-
-<div data-role="page" id="pagebuilding"----------------------------------------------------------------- buildingpage>
+        
+<div data-role="page" id="pagemap"----------------------------------------------------------------- mappage>
    <div data-role="header">
         
-        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
+        <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a> <a onclick="getLocation(); return false" data-icon="search" class="ui-btn-right">Locate</a>
        
-     <h1>pagebuilding</h1>
+     <h1>Map</h1>
    </div>
    <div data-role="content">
-      <p>Welcome to building Page</p>
- 
     
-<p>Report On building</p>
+<div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
+       <div id="map_canvas"> </div>
 
-
+       
     </div>
 </div>
-
 
     
 <div data-role="page" id="inputlistpage"----------------------------------------------------------------- inputpage>
@@ -130,25 +160,38 @@
        
         <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1> what to report </h1>
+      <h1> Report Incidents </h1>
    </div>
    <div data-role="content">
-      <p>report it </p>
  
-   
-  
-<label for="intypelist" class="select">intypes</label>  
-  
-
-                <ul data-role="listview"   id="intypelist" >    
-     
+ 
+        <label for="intypelist" class="select">  </label>  
+          <ul data-role="listview"   id="intypelist" >    
+      
                 </ul>
-                 
-    
-    
-    
+       
+        <p></p>
+       <p><a href="#reportpage">- Server Down - link to emergency report </a> </p>  
+        
+        
+                        
+             <div data-role="footer"  data-position="fixed" id="reportincidentsfooter">		
+                  <div data-role="navbar" data-iconpos="top">
+                    <ul> 
+                        <li><a href="#communitylistpage" data-icon="grid">Login </a></li>
+     
+                        <li><a href="" data-icon="star" data-theme="e"> Panic </a></li>
+                        <li><a href="" data-icon="gear"> safety box </a></li>
+
+                    </ul>
+                </div><!-- /navbar -->
+             </div>
+       
+       
     </div>
-</div>
+</div>              
+        
+
         
    
     
@@ -157,27 +200,26 @@
        
         <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1> events </h1>
+      <h1> Alerts </h1>
    </div>
    <div data-role="content">
-      <p>reported </p>
  
-   
-  
-<label for="eventlist" class="select">events</label>  
+
+            <label for="eventlist" class="select">Alerts </label>  
   
 
                 <ul data-role="listview"   id="eventlist" >    
-     
+    
                 </ul>
                  
     
-    
+ <p>Server Down</p>    
+<p>Support notified</p> 
     
     </div>
 </div>
         
-        
+      
         
       
         
@@ -187,14 +229,15 @@
        
         <a href="#home" data-icon="arrow-l" class="ui-btn-Left">home</a>
        
-      <h1> communitylist </h1>
+      <h1> Login Community </h1>
    </div>
    <div data-role="content">
      
  
    
   
-<label for="communitylist2" class="select">intypes</label>  
+<label for="communitylist2" class="select">  
+                                                    </label>  
   
 
                 <ul data-role="listview"   id="communitylist2" >    
@@ -202,7 +245,8 @@
                 </ul>
                  
     
-    
+ <p>Server Down</p>    
+<p>Support notified</p>
     
     </div>
 </div>
@@ -228,10 +272,24 @@
 
 
     </div>
-</div>
-   
-
+</div>       
+        
         
         
     </body>
     </html>
+
+
+
+ 
+        
+       
+    
+
+  
+
+    
+
+
+ 
+   

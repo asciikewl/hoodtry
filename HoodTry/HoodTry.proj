@@ -61,6 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\HomeGroup.jpg" />
+    <Content Include="images\imgaudio.png" />
+    <Content Include="images\imglogin.png" />
+    <Content Include="images\imgmap.png" />
+    <Content Include="images\imgpanic.png" />
+    <Content Include="images\imgreportincident.jpg" />
+    <Content Include="images\imgsafetybox.png" />
+    <Content Include="images\imgviewalerts.png" />
     <Content Include="images\redbullhorn.jpg" />
     <Content Include="images\redface.jpg" />
     <Content Include="images\smallgroup.bmp" />
