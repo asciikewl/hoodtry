@@ -104,6 +104,7 @@
     <Content Include="notused\Mysettings.html" />
     <Content Include="notused\People.html" />
     <Content Include="notused\screen1.html" />
+    <Content Include="openmap.html" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>

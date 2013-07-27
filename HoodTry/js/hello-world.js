@@ -14,7 +14,7 @@ function onDeviceReady() {
     listevents();
     navigator.splashscreen.hide();
   
-    
+    var intypevalue = "public report"
 }
 
 $('#eventlistpage').live('pageshow',function(event, ui){
@@ -56,6 +56,10 @@ function onGeolocationSuccess(position) {
     
     $("#event_latitude").val(hoodeye_last_position.coords.latitude);
     $("#event_longitude").val(hoodeye_last_position.coords.longitude);
+    $("#panic_event_latitude").val(hoodeye_last_position.coords.latitude);
+    $("#panic_event_longitude").val(hoodeye_last_position.coords.longitude);
+      
+ 
     
     // Use Google API to get the location data for the current coordinates
     var geocoder = new google.maps.Geocoder();
@@ -71,10 +75,26 @@ function onGeolocationSuccess(position) {
     
     // Use Google API to get a map of the current location
     // http://maps.googleapis.com/maps/api/staticmap?size=280x300&maptype=hybrid&zoom=16&markers=size:mid%7Ccolor:red%7C42.375022,-71.273729&sensor=true
-    var googleApis_map_Url = 'http://maps.googleapis.com/maps/api/staticmap?size=300x200&maptype=street&zoom=16&sensor=true&markers=size:mid%7Ccolor:red%7C' + latlng;
+    //var googleApis_map_Url = 'http://maps.googleapis.com/maps/api/staticmap?size=300x200&maptype=street&zoom=13&sensor=true&markers=size:mid%7Ccolor:red%7C' + latlng + latlngalert ;
+    
+    
+    var latlngalert = "|-26.11305892469931,27.984621|-26.113058924691,27.984620891537|-26.1130589249,27.984620892"
+    
+    var googleApis_map_Url = 'http://maps.googleapis.com/maps/api/staticmap?size=300x200&maptype=street&zoom=13&sensor=true&markers=size:mid%7Ccolor:red%7C' + latlng + latlngalert ;
     var mapImg = '<img src="' + googleApis_map_Url + '" />';
     $("#map_canvas").html(mapImg);
+    
 }
+
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+//        <img width="288" height="200" id="mapmarker" 
+//        src="https://maps.googleapis.com/maps/api/staticmap?center=-26.11305892469931,27.9846208915375&amp;
+//            zoom=11&amp;size=288x200&amp;
+ //           markers=-26.11305892469931,27.984621|-26.113058924691,27.9846208915375&amp;
+ //           sensor=false">
 
 // onGeolocationError Callback receives a PositionError object
 function onGeolocationError(error) {
@@ -184,9 +204,12 @@ function listcommunity2() {
       var options;
       $.each(data[3].intypes, function(key, intype) { 
  
-          options += '<li><a href="#reportpage"> <img src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
-          
-     });
+          options += '<li><a href="#reportpage" > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
+      var    intype.value = intype.label
+//-----------------------------------------
+      
+      
+      });
      
      $("#communitylist2").html(options);
 
@@ -202,7 +225,7 @@ function listevents() {
       var options;
       $.each(data, function(key, event) { 
  
-          options += '<li><a href="#home"> <img src="" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          options += '<li><a href="#home"> <img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
           
      });
      
@@ -210,13 +233,6 @@ function listevents() {
 
     });
 }
-
-
-
-
-
-
-
 
 
 

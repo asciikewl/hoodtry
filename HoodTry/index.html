@@ -18,45 +18,44 @@
         <div data-role="page" id="home" --------------------------------------- homepage >
             <div data-role="header">
                <a href="#mysettingspage" data-icon="info" class="ui-btn-right">Settings</a>
-	<span class="ui-title" />
-                <h2>Hoodeye</h2>
+                <h1>Hoodeye</h1>
             </div>
-                        <div data-role="content">
+             <div data-role="content">
                        
 <div class="ui-grid-a" id="menupage">
-            <div class="ui-block-a">
-                <a id="img1" href="#communitylistpage">
+            <div class="ui-block-a" style="text-align: center;">
+                <a id="img1" href="#inputlistpage">
                     <div style="text-align: center;">
                         <img id="img1" style="width: 100px; height: 100px;" src="images/imglogin.png">
                     </div>
                 </a>
- login
+login
             </div>
-            <div class="ui-block-b">
-                <a id="img2" href="#inputlistpage">
+            <div class="ui-block-b" style="text-align: center;">
+                <a id="img2" href="#communitylistpage">
                     <div style="text-align: center;">
                         <img  id="img2" style="width: 100px; height: 100px;" src="images/imgreportincident.jpg">
                     </div>
                 </a>
  report incident
             </div>
-            <div class="ui-block-a">
-                <a id="img3" href="">
+            <div class="ui-block-a" style="text-align: center;">
+                <a id="img3" href="#panicpage">
                     <div style="text-align: center;">
                         <img id="img3" style="width: 100px; height: 100px;" src="images/imgpanic.png">
                     </div>
                 </a>
 panic
             </div>
-            <div class="ui-block-b">
-                <a id="img4" href="">
+            <div class="ui-block-b" style="text-align: center;">
+                <a id="img4" href="#">
                     <div style="text-align: center;">
                         <img id="img4" style="width: 100px; height: 100px;" src="images/imgsafetybox.png">
                     </div>
                 </a>
 safety box
             </div>
-            <div class="ui-block-a">
+            <div class="ui-block-a" style="text-align: center;">
                  <a id="img5" href="#pagemap">
                     <div style="text-align: center;">
                         <img id="img5" style="width: 100px; height: 100px;" src="images/imgmap.png">
@@ -65,7 +64,7 @@ safety box
 map
 
             </div>
-            <div class="ui-block-b">
+            <div class="ui-block-b" style="text-align: center;">
                      <a id="img6" href="#eventlistpage">
                     <div style="text-align: center;">
                         <img id="img6" style="width: 100px; height: 100px;" src="images/imgviewalerts.png">
@@ -73,13 +72,12 @@ map
                 </a>
 view alerts           
              </div>
-            </div>
-
-                   
+                            
+   </div>
+ </div>     
+</div>     
      
-    </div>     
- </div>       
-
+      
 <div data-role="page" data-transition="slideup" id="reportpage"---------------------------------------------- reportpage>
    <div data-role="header">
      <a href="#home"  data-icon="back" class="ui-btn-Left">home</a>
@@ -126,11 +124,63 @@ view alerts
                              <input id="event_longitude" type="hidden" name='long'  val='-'>
                         
   
-                        <input name='submit' value="submit" type='submit'>
-                        </form>
+                        <input name='submit'  value="Report" data-icon="alert" type='submit' style="color:black; background-color:#ed1c24";>
+  
+                               </form>
                         
                             <div id='result'>No Result yet</div>
 
+
+    </div>
+</div>
+
+          
+     
+      
+<div data-role="page" data-transition="slideup" id="panicpage"---------------------------------------------- panicpage>
+   <div data-role="header">
+     <a href="#home"  data-icon="back" class="ui-btn-Left">home</a>
+       <h1>Panic</h1>
+   </div>
+                           <div data-role="content">
+                          
+             <form action="">
+            <div data-role="fieldcontain">
+                <label for="textinput1">
+                    panic
+                </label>
+                <input name="panic" id="textinput1" type="text" placeholder="help me - "
+                value="help me - ">
+            </div>
+                   
+                  <fieldset data-role="controlgroup" data-type="vertical">
+                        <legend>
+                            Choose:
+                        </legend>
+                        <input name="contactfamily" id="checkbox1" type="checkbox">
+                        <label for="checkbox1">
+                            my family
+                        </label>
+                        <input name="contactfriends" id="checkbox2" type="checkbox">
+                        <label for="checkbox2">
+                            my friends
+                        </label>
+                        <input name="contactmedical" id="checkbox3" type="checkbox">
+                        <label for="checkbox3">
+                            my medical contacts
+                        </label>
+                    </fieldset>
+                 
+                <a href="sms:0823774883">Send SMS</a>
+                 
+     
+                            
+                 <input id="panic_event_latitude" type="text" name='lat'  val='-'>
+                 <input id="panic_event_longitude" type="text" name='long'  val='-'>
+                        
+                   
+        </form>                    
+                               
 
     </div>
 </div>
@@ -150,6 +200,13 @@ view alerts
 <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
        <div id="map_canvas"> </div>
 
+       
+       
+
+
+       
+       
+       
        
     </div>
 </div>
@@ -282,7 +339,7 @@ view alerts
 
 
  
-        
+  
        
     
 
