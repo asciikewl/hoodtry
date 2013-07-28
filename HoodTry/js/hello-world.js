@@ -4,6 +4,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
+
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
@@ -14,7 +15,7 @@ function onDeviceReady() {
     listevents();
     navigator.splashscreen.hide();
   
-    var intypevalue = "public report"
+    
 }
 
 $('#eventlistpage').live('pageshow',function(event, ui){
@@ -205,7 +206,9 @@ function listcommunity2() {
       $.each(data[3].intypes, function(key, intype) { 
  
           options += '<li><a href="#reportpage" > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
-      var    intype.value = intype.label
+      
+      
+       
 //-----------------------------------------
       
       
@@ -234,8 +237,8 @@ function listevents() {
     });
 }
 
-
-
+ 
+      
 
  function submitEvent() {
                     $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
