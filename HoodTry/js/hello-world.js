@@ -201,9 +201,8 @@ function listintype1() {
            currentcommunity = community ;
              $("#eventcommunity").val(community._id)    ;
         });
-          
-       
-       
+        
+      });
     });
 }
 
@@ -218,11 +217,6 @@ function listcommunity2() {
       $.each(data[3].intypes, function(key, intype) { 
  
           options += '<li><a href="#reportpage"   > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
-      
-
-       
-//-----------------------------------------
-      
       
       });
    
