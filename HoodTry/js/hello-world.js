@@ -205,15 +205,15 @@ function listcommunity2() {
       var options;
       $.each(data[3].intypes, function(key, intype) { 
  
-          options += '<li><a href="#reportpage" > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
+          options += '<li><a href="#reportpage"   > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
       
-      
+
        
 //-----------------------------------------
       
       
       });
-     
+   
      $("#communitylist2").html(options);
 
     });
