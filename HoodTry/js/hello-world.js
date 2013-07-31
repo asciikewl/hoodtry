@@ -2,7 +2,7 @@
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
-
+var currentcommunity ;
 
 
 // PhoneGap is ready
@@ -187,11 +187,23 @@ function listintype1() {
       var options;
       $.each(data, function(key, community) { 
        
-          options += '<li><a href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'-- community stuff---'+'</p></a></li>';
-     });
+          options += '<li><a id="com-"+community._id href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'-- community stuff---'+'</p></a></li>';
+  
+          
+      });
      
      $("#intypelist").html(options);
 
+    $.each(data, function(key, community) { 
+       
+       
+             $("#com-"+community._id).click(function(){
+           currentcommunity = community ;
+             $("#eventcommunity").val(community._id)    ;
+        });
+          
+       
+       
     });
 }
 
