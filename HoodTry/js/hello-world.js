@@ -18,9 +18,16 @@ function onDeviceReady() {
     
 }
 
+
+
 $('#eventlistpage').live('pageshow',function(event, ui){
        listevents();
            });
+
+
+
+  
+
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
@@ -187,7 +194,7 @@ function listintype1() {
       var options;
       $.each(data, function(key, community) { 
        
-          options += '<li><a id="com-"+community._id href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'-- community stuff---'+'</p></a></li>';
+          options += '<li><a id="com-"+community._id href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'com-'+community._id+'</p></a></li>';
   
           
       });
@@ -199,7 +206,9 @@ function listintype1() {
        
              $("#com-"+community._id).click(function(){
            currentcommunity = community ;
-             $("#eventcommunity").val(community._id)    ;
+                 alert("anyting");
+                 
+              
         });
         
       });
