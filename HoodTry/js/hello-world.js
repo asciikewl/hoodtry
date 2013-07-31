@@ -2,7 +2,10 @@
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
+
+var currentintype ;
 var currentcommunity ;
+var community_list;
 
 
 // PhoneGap is ready
@@ -187,45 +190,47 @@ function listintype() {
 
 
 
+
+
+
+
+function assigncommunity (key) {
+           currentcommunity = community_list[key] ;
+    $("#eventcommunity").val(currentcommunity._id);
+    
+}
+
+function assignintype(intype) {
+           currentintype = intype ;
+      $("#eventintype").val(currentintype) ;
+    
+}
+
 function listintype1() {
    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
+      community_list = data;
         
       var items = [];
       var options;
       $.each(data, function(key, community) { 
        
-          options += '<li><a id="com-"+community._id href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'com-'+community._id+'</p></a></li>';
+          options += '<li><a onClick="assigncommunity('+key+')" href="#home"> <img src="images/redbullhorn.jpg" /> <h3> '+community.name+'</h3><p> '+'com-'+community._id+'</p></a></li>';
   
           
       });
      
      $("#intypelist").html(options);
 
-    $.each(data, function(key, community) { 
-       
-       
-             $("#com-"+community._id).click(function(){
-           currentcommunity = community ;
-                 alert("anyting");
-                 
-              
-        });
-        
-      });
     });
 }
 
-
-
-
 function listcommunity2() {
    $.get('http://dev.hoodeye.com:4242/api/community', function(data) {
-        
       var items = [];
       var options;
       $.each(data[3].intypes, function(key, intype) { 
  
-          options += '<li><a href="#reportpage"   > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
+          options += '<li><a onClick="assignintype('+intype+')" href="#reportpage"   > <img style="width: 50px; height: 50px;" src="images/redface.jpg" /> <h3> '+intype.label+'</h3><p> '+'--thing of community---'+'</p></a></li>';
       
       });
    
@@ -243,7 +248,7 @@ function listevents() {
       var options;
       $.each(data, function(key, event) { 
  
-          options += '<li><a href="#home"> <img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p></a></li>';
+          options += '<li><a href="#home"> <img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> <h3> '+event.activity+'</h3><p> '+event.detail+'</p><p> '+event.intype+'</p></a></li>';
           
      });
      
@@ -256,7 +261,12 @@ function listevents() {
       
 
  function submitEvent() {
-                    $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
+                    
+     
+     $("#eventcommunity").val(currentcommunity._id) ;
+     $("#eventintype").val(currentintype) ;
+     
+     $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
                             {
                             $('#result').html(response);
                             }});
