@@ -3,6 +3,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 
+//-----------------------
 var currentintype ;
 var currentcommunity ;
 var community_list;
@@ -20,7 +21,12 @@ function onDeviceReady() {
     navigator.splashscreen.hide();
   
     
+   
+    
+    
 }
+
+
 
 
 
@@ -270,10 +276,14 @@ function listevents() {
       
 
  function submitEvent() {
-                    
+       
+  
      
      $("#eventcommunity").val(currentcommunity._id) ;
      $("#eventintype").val(currentintype.label) ;
+     $("#eventdevicedetails").val("devicename : " + device.name + " deviceId: " + device.uuid + " deviceOs: " + device.platform + " deviceosversion : " + device.version) ;
+    
+     
      
      $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
                             {
