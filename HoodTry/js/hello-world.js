@@ -258,13 +258,17 @@ function listcommunity2() {
 
 function listevents() {
    var params = 'community_id=' + currentcommunity._id;
-   $("#eventlisttitle").html("Alerts for ".currentcommunity.name);
+   $("#eventlisttitle").html("Alerts for " + currentcommunity.name);
    $.get('http://dev.hoodeye.com:4242/api/event?'+params,function(data) {
       var items_html;
+      var count = 0;
       $.each(data, function(key, event) { 
          items_html += '<li><img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> '+event.intype+'<br/>'+event.detail+'</li>';
+         count=++count;
       );
-      
+          if (count == 0) {
+              items_html = "<li>No Events found.</li>";
+          }
      $("#eventlist").html(items_html);
 
     });
