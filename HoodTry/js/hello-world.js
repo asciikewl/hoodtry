@@ -257,19 +257,27 @@ function listcommunity2() {
 
 
 function listevents() {
-   $.get('http://dev.hoodeye.com:4242/api/event', function(data) {
-        
-      var items = [];
-      var options;
+   var params = 'community_id=' + currentcommunity._id;
+   $.get('http://dev.hoodeye.com:4242/api/event?'+params)
+   	.done(function(data) {
+      $("#eventlisttitle").html("Alerts for ".currentcommunity.name)  
+      var items_html;
+      var count = 0;
       $.each(data, function(key, event) { 
- 
-          options += '<li><a href="#home"> <img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> <h3> '+event.community_id+'</h3><p> '+event.intype+'</p><p> '+event.detail+'</p></a></li>';
-          
+         items_html += '<li><img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> '+event.intype+'<br/>'+event.detail+'</li>';
+         count++;
      });
+        if (count == 0) {
+            items_html = "<li>No events found.</li>";
+        }
      
-     $("#eventlist").html(options);
+     $("#eventlist").html(items_html);
 
-    });
+    })
+   .fail(function() {
+       $("#eventlist").html(<li>Error querying server.</li>);
+
+   });
 }
 
  
