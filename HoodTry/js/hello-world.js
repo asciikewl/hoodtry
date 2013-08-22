@@ -264,9 +264,9 @@ function listevents() {
       var count = 0;
       $.each(data, function(key, event) { 
          items_html += '<li><img src="images/imgviewalerts.png" style="width: 20px; height: 20px;" /> '+event.intype+'<br/>'+event.detail+'</li>';
-         count=++count;
-      );
-          if (count == 0) {
+         count += 1;
+      });
+       	   if (count == 0) {
               items_html = "<li>No Events found.</li>";
           }
      $("#eventlist").html(items_html);
