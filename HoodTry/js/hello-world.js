@@ -258,7 +258,7 @@ function listcommunity2() {
 
 function listevents() {
    var params = 'community_id=' + currentcommunity._id;
-   $("#eventlisttitle").html("Alerts for " + currentcommunity.name);
+   $("#eventlisttitle").html("inf " + currentcommunity.name);
    $.get('http://dev.hoodeye.com:4242/api/event?'+params,function(data) {
       var items_html;
       var count = 0;
@@ -284,7 +284,10 @@ function listevents() {
      $("#eventcommunity").val(currentcommunity._id) ;
      $("#eventintype").val(currentintype.label) ;
      $("#eventdevicedetails").val("devicename : " + device.name + " deviceId: " + device.uuid + " deviceOs: " + device.platform + " deviceosversion : " + device.version) ;
-    
+   
+     // add timestamp 
+     var currentTime = new Date();
+     $("#create_time").val(currentTime.toISOString());
      
      
      $.ajax({type:'POST', url: 'http://dev.hoodeye.com:4242/api/event', data:$('#EventForm').serialize(), success: function(response)
